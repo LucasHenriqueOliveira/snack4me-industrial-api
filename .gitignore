@@ -16,6 +16,7 @@ app/storage/
 public/storage
 public/hot
 storage/*.key
+sotrage/framework/cache/**
 .env.*.php
 .env.php
 .env
