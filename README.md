@@ -1,4 +1,4 @@
-# Snack4me
+# Snack4me Industrial Version
 
 ## API
 
