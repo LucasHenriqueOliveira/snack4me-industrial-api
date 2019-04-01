@@ -15,7 +15,11 @@ class MenuItem extends Model
 
     protected $fillable = [
         'name',
+        'description',
+        'picture',
         'menu_id',
+        'price',
+        'stock',
     ];
 
     public function menu() {
@@ -29,10 +33,12 @@ class MenuItem extends Model
                 throw new \Exception('menu item exists to menu selected');
             }
             $fields = [
-                'name'      => $data['name'],
-                'menu_id'   => $data['menu_id'],
-                'price'     => $data['price'],
-                'stock'     => $data['stock'],
+                'name'          => $data['name'],
+                'description'   => $data['description'],
+                'picture'       => $data['picture'],
+                'menu_id'       => $data['menu_id'],
+                'price'         => $data['price'],
+                'stock'         => $data['stock'],
             ];
             $self = self::create($fields);
         } catch (\Exception $e) {
@@ -50,11 +56,13 @@ class MenuItem extends Model
                 throw new \Exception('menu item not found');
             }
             $fields = [
-                'id'        => $data['id'],
-                'name'      => $data['name'],
-                'menu_id'   => $data['menu_id'],
-                'price'     => $data['price'],
-                'stock'     => $data['stock'],
+                'id'            => $data['id'],
+                'name'          => $data['name'],
+                'description'   => $data['description'],
+                'picture'       => $data['picture'],
+                'menu_id'       => $data['menu_id'],
+                'price'         => $data['price'],
+                'stock'         => $data['stock'],
             ];
             $self->update($fields);
         } catch (\Exception $e) {

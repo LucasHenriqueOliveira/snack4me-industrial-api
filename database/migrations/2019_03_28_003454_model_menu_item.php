@@ -17,6 +17,8 @@ class ModelMenuItem extends Migration
             $table->increments('id');
             $table->unsignedInteger('menu_id');
             $table->string('name',255);
+            $table->text('description');
+            $table->string('picture');
             $table->float('price');
             $table->integer('stock')->default(-1);
             $table->timestamps();
@@ -36,8 +38,8 @@ class ModelMenuItem extends Migration
      */
     public function down()
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('menus_items');
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        Schema::enableForeignKeyConstraints();
     }
 }
